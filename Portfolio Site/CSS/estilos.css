@@ -1,0 +1,319 @@
+/*Reset do Css*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background-image: url("https://i0.wp.com/www.pebsp.com/wp-content/uploads/2018/12/background-azul.gif?ssl=1");
+  background-size: auto 100vh;
+  font-family: 'Source Code Pro', monospace;
+  height: 100vh;
+  font-size: 18px;
+}
+
+
+/* Se a tela tiver pelo menos 400px vai carregar estes estilos*/
+@media(min-width: 400px){
+  body{
+    font-size: 14px;
+  }
+
+}
+/*Breankpoint*/
+@media(min-width: 1200px){
+  body{
+    font-size: 20px;
+  }
+
+}
+
+
+header{
+  height: 50vh;
+  display: flex;
+  justify-content: center;    /* Centralizar Horizotalmente*/
+  align-items: center;  /*Centralizar Verticalmente só funciona com flex*/
+
+}
+
+.menu{
+  background-color:white;
+  position: fixed; /* Position Mexe com termo Z*/
+  width: 100vw;
+  top: 0;
+  z-index: 1;
+  font-size: 18px;
+                                
+}
+
+.container-menu{
+  display:flex;
+  justify-content:space-between; 
+  padding-right:0.4em;
+  
+
+}
+
+.container-menu .texto-home i {
+  margin-right: 10px;
+  padding-left:0em;
+  
+
+
+}
+
+.menu ul{
+  display:inline-flex;
+  justify-content: space-around;
+  margin-right: 6em;
+  
+}
+
+
+.menu li{
+ list-style:none;
+ 
+}
+
+.menu a{
+  border-bottom: 3px solid transparent;
+  display:block;
+  padding: 10px 20px;
+  transition: background-color 1s,color 1s;
+}
+
+.menu a:active,
+.menu a:hover{
+  background-color:#1E90FF;
+  color:white;
+  
+}
+
+a{
+  color:#4169E1;
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+}
+
+.titulo{
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+
+  
+  animation: linear 2s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo{   /*Função de animaçao titulo*/
+  
+
+  from{
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+
+  }
+
+  to{
+   transform: scale(1) translateY(0);
+   opacity: 1;
+
+  }
+}
+
+
+.site-subtitle,
+.site-title{
+  color: white;
+  text-align: center;
+  
+  
+  
+}
+
+.site-title{
+  font-size: 4em;
+  font-family: 'Indie Flower', cursive;  
+  
+}
+
+.site-subtitle{
+  font-style:italic;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 2.4em;
+  
+  
+}
+
+.sobre,
+.contato,
+.portfolio{
+  padding: 5em;
+  min-height:100vh;
+  
+  
+}
+
+@media(min-width:1200px){
+.container{
+  margin-left: auto ;
+  margin-right: auto ;
+  max-width: 1200px;
+ }
+}
+
+
+.sobre h2,
+.contato h2,
+.portfolio h2{
+  font-family: 'Press Start 2P', cursive;
+  color:whitesmoke;
+  margin-bottom: 1.5em;
+  font-size: 2em;
+  text-decoration: underline;
+  
+  
+  
+}
+
+.sobre p{
+  color: whitesmoke;
+  margin-bottom:1.4em;
+  text-indent:1.5em;
+  text-align: justify;
+}
+
+.sobre a{
+  color:white ;
+  text-decoration: underline;
+}
+
+.sobre a:hover{
+  color: cyan ;
+  background-color: cyan;
+
+}
+
+.sobre .avatar{
+  float: right;
+  margin-left: 2em; /*Margem da esquerda*/
+}
+
+
+.sobre .avatar img{
+  border-radius:50%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  box-shadow: 1px 1px 4px black;
+  
+  
+} 
+
+
+
+.portfolio .grid{
+  display: grid;
+  gap: 5em; /* Defini o espaçamento entre cada coluna*/
+}
+
+@media(min-width:560px){
+  .portfolio .grid{
+   grid-template-columns: 240px 240px;
+  }
+}
+
+
+
+@media(min-width:880px){
+  .portfolio .grid{
+   grid-template-columns: 260px 260px 260px;
+   align-content: center;
+   justify-content: center;
+   height: calc(100vh - 8em - 48px);
+   
+  }
+}
+
+.portfolio figure{
+  text-align: center;
+}
+
+
+.img-portfolio{
+  height:180px;
+  width: 100%;
+  object-fit: cover;
+  object-position: left bottom;
+  border-radius: 10%;
+  transition: transform 500ms;
+}
+
+.img-portfolio:hover{
+  transform: scale(1.2);
+}
+
+.flip-card{
+  perspective: 500px;
+}
+
+.card{
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+ .flip-card .card:hover{
+  transform: rotateY(180deg);
+}
+
+.card-front, 
+.card-back{
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+} 
+
+.card-back{
+  background-color: white;
+  height: 180px;
+  width:100%;
+  transform: rotateY(180deg);
+}
+
+.contato .icons{
+  text-align: left;
+
+}
+
+
+.contato a{
+  color:whitesmoke;
+  font-size: 4em;
+  transition: text-shadow 1s;
+
+}
+
+
+
+.contato a:active, /*Para Celular*/
+.contato a:hover{
+  text-decoration: none;
+  text-shadow: 0px 0px  10px rgba(255,255,255,.5);
+}
+
+
+@media(mini-width: 1200px){
+  .img-portfolio{
+    height:auto;
+    width: 100%;
+  }
+}
+
+
